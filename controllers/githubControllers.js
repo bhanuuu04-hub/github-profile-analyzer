@@ -18,9 +18,11 @@ const getGithubProfile = async (req, res) => {
       data: response.data,
     });
   } catch (error) {
+        console.log(error);
+
     res.status(500).json({
       success: false,
-      message: "GitHub user not found",
+      message: error.message,
     });
   }
 };
